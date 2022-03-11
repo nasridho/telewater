@@ -13,7 +13,7 @@ import requests
 from telewater import conf
 
 
-def download_image(url: str, filename: str = "image.png") -> bool:
+def download_image(url: str, filename: str = "image.mp4") -> bool:
     if filename in os.listdir():
         print("Image exists")
         return True
