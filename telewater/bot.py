@@ -52,7 +52,7 @@ async def set_config(event):
 
         print(conf.config)
         if key == "watermark":
-            cleanup("image.mp4")
+            cleanup("image.png")
             download_image(url=value)
         await event.respond(f"The value of {key} was set to {value}")
 
@@ -99,7 +99,7 @@ async def watermarker(event):
 
     org_file = stamp(await event.download_media(""), user=str(event.sender_id))
 
-    file = File("image.mp4")
+    file = File("messi.mp4")
     wtm = Watermark(File(org_file), pos=conf.config.position)
 
     out_file = apply_watermark(
