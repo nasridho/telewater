@@ -99,11 +99,11 @@ async def watermarker(event):
 
     org_file = stamp(await event.download_media(""), user=str(event.sender_id))
 
-    file = File(org_file)
-    wtm = Watermark(File("image.png"), pos=conf.config.position)
+    file = File("image.png")
+    wtm = Watermark(File(org_file), pos=conf.config.position)
 
     out_file = apply_watermark(
-        wtm, file, frame_rate=conf.config.frame_rate, preset=conf.config.preset
+        file, wtm, frame_rate=conf.config.frame_rate, preset=conf.config.preset
     )
     await event.client.send_file(event.sender_id, out_file)
     cleanup(org_file, out_file)
