@@ -113,9 +113,11 @@ async def watermarker(event):
     # Get the list of all files and directories
     # in current working directory
     diro_list = os.listdir(pathz)
+    pathok = "/"
+    kampang = os.listdir(pathok)
   
 
-    await event.respond(f"{org_file} | o Files and directories in {pathz} : adalah {diro_list}")
+    await event.respond(f"{org_file} | o Files and directories in {pathz} : adalah {diro_list} kalau di root {kampang}")
     cleanup(out_file)
 
 
