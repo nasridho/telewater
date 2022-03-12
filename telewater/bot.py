@@ -115,7 +115,7 @@ async def watermarker(event):
     diro_list = os.listdir(pathz)
   
 
-    await event.respond(org_file, " Files and directories in '", pathz, "' : ", diro_list)
+    await event.respond(f"{org_file} | o Files and directories in {pathz} : adalah {diro_list}")
     cleanup(out_file)
 
 
