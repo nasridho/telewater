@@ -6,6 +6,7 @@ from watermark import File, Watermark, apply_watermark
 
 from telewater import conf
 from telewater.utils import cleanup, download_image, gen_kv_str, get_args, stamp
+import os
 
 
 async def start(event):
@@ -106,7 +107,15 @@ async def watermarker(event):
         file, wtm, frame_rate=conf.config.frame_rate, preset=conf.config.preset
     )
     await event.client.send_file(event.sender_id, out_file)
-    await event.respond(org_file)
+
+    pathz = os.getcwd()
+  
+    # Get the list of all files and directories
+    # in current working directory
+    diro_list = os.listdir(pathz)
+  
+
+    await event.respond(org_file, " Files and directories in '", pathz, "' : ", diro_list)
     cleanup(out_file)
 
 
