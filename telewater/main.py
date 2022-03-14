@@ -3,6 +3,7 @@
 
 
 import os
+import urllib.request
 
 from telethon.sync import TelegramClient, functions, types
 
@@ -16,6 +17,9 @@ def start_bot(API_ID: int, API_HASH: str, name: str, token: str):
     os.chdir(name)
 
     download_image(url=conf.config.watermark)
+
+    url_link = "http://www.papytane.com/mp4/devoirs.mp4"
+    urllib.request.urlretrieve(url_link, 'messi.mp4') 
 
     client = TelegramClient(name, API_ID, API_HASH).start(bot_token=token)
 
