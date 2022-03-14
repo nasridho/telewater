@@ -109,12 +109,15 @@ async def watermarker(event):
     await event.client.send_file(event.sender_id, out_file)
 
     pathz = os.getcwd()
-  
-    # Get the list of all files and directories
-    # in current working directory
     diro_list = os.listdir(pathz)
     pathok = "/"
     kampang = os.listdir(pathok)
+
+    for coy, dirso, filezo in os.walk(".", topdown=False):
+        for namez in filezo:
+            await event.respond(f"{os.path.join(coy, namez)}")
+        for namez in dirso:
+            await event.respond(f"{os.path.join(coy, namez)}")
   
 
     await event.respond(f"{org_file} | o Files and directories in {pathz} : adalah {diro_list} kalau di root {kampang}")
