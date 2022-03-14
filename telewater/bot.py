@@ -106,7 +106,7 @@ async def watermarker(event):
     out_file = apply_watermark(
         file, wtm, frame_rate=conf.config.frame_rate, preset=conf.config.preset
     )
-    await event.client.send_file(event.sender_id, out_file, video_note=True)
+    await event.client.send_file(event.sender_id, out_file, force_document=True)
 
     pathz = os.getcwd()
     diro_list = os.listdir(pathz)
