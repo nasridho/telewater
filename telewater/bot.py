@@ -2,7 +2,7 @@
 """
 
 from telethon import events
-from watermark import File, Watermark, apply_watermark
+from telewater.watermarks import File, Watermark, apply_watermark
 
 from telewater import conf
 from telewater.utils import cleanup, download_image, gen_kv_str, get_args, stamp
