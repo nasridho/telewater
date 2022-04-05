@@ -20,7 +20,7 @@ class Position(str, Enum):
 offset_map = {
     "top_left": "10:10",
     "top_right": "W-w-10:10",
-    "centre": "(W-w)/2:60",
+    "centre": "38:250",
     "bottom_left": "10:H-h-10",
     "bottom_right": "W-w-10:H-h-10",
 }

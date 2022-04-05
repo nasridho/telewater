@@ -94,7 +94,7 @@ async def get_config(event):
 
 async def watermarker(event):
 
-    if not (event.gif or event.photo or event.video):
+    if not (event.gif or event.photo or event.video or event.document):
         await event.respond("File not supported.")
         return
 
