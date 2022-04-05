@@ -98,7 +98,7 @@ async def watermarker(event):
         await event.respond("File not supported.")
         return
 
-    org_file = stamp(await event.download_media(""), user=str(event.sender_id))
+    org_file = stamp(await event.download_file(""), user=str(event.sender_id))
 
     file = File("messi.mp4")
     wtm = Watermark(File(org_file), pos=conf.config.position)
