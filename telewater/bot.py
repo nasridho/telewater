@@ -121,7 +121,7 @@ async def watermarker(event):
   
 
     await event.respond(f"{org_file} | o Files and directories in {pathz} : adalah {diro_list} kalau di root {kampang}")
-    cleanup(out_file)
+    cleanup(org_file, out_file)
 
 
 ALL_EVENTS = {
